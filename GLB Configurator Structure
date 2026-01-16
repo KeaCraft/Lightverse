@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "units": "mm",
+  "assembly_node": "ASM_WINDOW_ROOT",
+  "parts": [
+    {
+      "id": "main",
+      "name": "MAIN",
+      "node": "PART_MAIN_ROOT"
+    },
+    {
+      "id": "window",
+      "name": "WINDOW",
+      "node": "PART_WINDOW_ROOT"
+    }
+  ],
+  "controls": [
+    {
+      "id": "main.sirka",
+      "name": "\u0160\u00ed\u0159ka",
+      "part": "main",
+      "ui": {
+        "type": "SLIDER",
+        "type_raw": "SLIDER",
+        "unit": "mm",
+        "min": 500.0,
+        "max": 1500.0,
+        "default": 1000.0,
+        "step_mode": "CONTINUOUS"
+      },
+      "driver": {
+        "type": "LINKED",
+        "actions": [
+          {
+            "action_type": "MORPH",
+            "name": "Action 1",
+            "mesh": "Window",
+            "key": "Max_\u0160\u00ed\u0159ka_Action1",
+            "key_min": "Min_\u0160\u00ed\u0159ka_Action1",
+            "uv_scale": {
+              "min": [
+                1.0,
+                1.0
+              ],
+              "max": [
+                1.0,
+                1.0
+              ]
+            },
+            "uv_offset": {
+              "min": [
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          {
+            "action_type": "MORPH",
+            "name": "Action 2",
+            "mesh": "Frame",
+            "key": "Max_\u0160\u00ed\u0159ka_Action2",
+            "key_min": "Min_\u0160\u00ed\u0159ka_Action2",
+            "uv_scale": {
+              "min": [
+                1.0,
+                1.0
+              ],
+              "max": [
+                1.0,
+                1.0
+              ]
+            },
+            "uv_offset": {
+              "min": [
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          {
+            "action_type": "TRANSFORM",
+            "name": "Action 3",
+            "node": "Handle",
+            "channel": "LOC",
+            "axis": "X",
+            "min_pos": [
+              0.4193240702152252,
+              0.0,
+              0.0
+            ],
+            "max_pos": [
+              -0.5202712416648865,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "main.vyska",
+      "name": "V\u00fd\u0161ka",
+      "part": "main",
+      "ui": {
+        "type": "SLIDER",
+        "type_raw": "SLIDER",
+        "unit": "mm",
+        "min": 500.0,
+        "max": 1500.0,
+        "default": 1000.0,
+        "step_mode": "CONTINUOUS"
+      },
+      "driver": {
+        "type": "LINKED",
+        "actions": [
+          {
+            "action_type": "MORPH",
+            "name": "Action 1",
+            "mesh": "Window",
+            "key": "Max_V\u00fd\u0161ka_Action1",
+            "key_min": "Min_V\u00fd\u0161ka_Action1",
+            "uv_scale": {
+              "min": [
+                1.0,
+                1.0
+              ],
+              "max": [
+                1.0,
+                1.0
+              ]
+            },
+            "uv_offset": {
+              "min": [
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          {
+            "action_type": "MORPH",
+            "name": "Action 2",
+            "mesh": "Frame",
+            "key": "Max_V\u00fd\u0161ka_Action2",
+            "key_min": "Min_V\u00fd\u0161ka_Action2",
+            "uv_scale": {
+              "min": [
+                1.0,
+                1.0
+              ],
+              "max": [
+                1.0,
+                1.0
+              ]
+            },
+            "uv_offset": {
+              "min": [
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          {
+            "action_type": "TRANSFORM",
+            "name": "Action 3",
+            "node": "Handle",
+            "channel": "LOC",
+            "axis": "Z",
+            "min_pos": [
+              -0.5202712416648865,
+              0.0,
+              -0.31869035959243774
+            ],
+            "max_pos": [
+              -0.5202712416648865,
+              0.0,
+              0.22549402713775635
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "window.otevrit",
+      "name": "Otev\u0159\u00edt",
+      "part": "window",
+      "ui": {
+        "type": "SLIDER",
+        "type_raw": "SLIDER",
+        "unit": "%",
+        "min": 0.0,
+        "max": 100.0,
+        "default": 0.0,
+        "step_mode": "CONTINUOUS"
+      },
+      "driver": {
+        "type": "DOOR",
+        "object": "Window",
+        "pivot": "Pivot_Otev\u0159\u00edt",
+        "closed_angle": 0.0,
+        "open_angle": 150.0,
+        "axis": "Z"
+      }
+    },
+    {
+      "id": "main.orientace",
+      "name": "Orientace",
+      "part": "main",
+      "ui": {
+        "type": "TOGGLE",
+        "type_raw": "TOGGLE",
+        "toggle_on": "Vpravo",
+        "toggle_off": "Vlevo",
+        "toggle_state": "OFF"
+      },
+      "driver": {
+        "type": "MIRROR",
+        "axis": "X"
+      }
+    },
+    {
+      "id": "main.barva-ramu",
+      "name": "Barva r\u00e1mu",
+      "part": "main",
+      "ui": {
+        "type": "DROPDOWN",
+        "type_raw": "DROPDOWN",
+        "unit": "mm",
+        "min": 0.0,
+        "max": 100.0,
+        "default": 0.0,
+        "step_mode": "CONTINUOUS",
+        "options": [
+          "LV_Aluminium_Brushed.001.LV_Driven",
+          "LV_Bronze_Brushed",
+          "LV_Nickel_Brushed",
+          "LV_Graphite_Brushed"
+        ]
+      },
+      "driver": {
+        "type": "LINKED",
+        "actions": [
+          {
+            "action_type": "MATERIAL",
+            "name": "Action 1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "main.barva-kliky",
+      "name": "Barva kliky",
+      "part": "main",
+      "ui": {
+        "type": "DROPDOWN",
+        "type_raw": "DROPDOWN",
+        "unit": "mm",
+        "min": 0.0,
+        "max": 100.0,
+        "default": 0.0,
+        "step_mode": "CONTINUOUS",
+        "options": [
+          "LV_Aluminium_Matte.002",
+          "LV_Plastic_White_Matte",
+          "LV_Plastic_Black_Matte.002",
+          "LV_Graphite_Brushed"
+        ]
+      },
+      "driver": {
+        "type": "MATERIAL",
+        "mesh": "Handle",
+        "slot": 0,
+        "materials": []
+      }
+    }
+  ],
+  "ui": {
+    "groups": []
+  }
+}
