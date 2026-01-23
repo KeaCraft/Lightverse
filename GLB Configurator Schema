@@ -2,7 +2,34 @@
   "schema": 2,
   "units": "mm",
   "assembly_node": "ASM_WINDOW_ROOT",
-  "parts": [],
+  "ui": {
+    "groups": [
+      {
+        "id": "group.rozm\u011bry",
+        "label": "Rozm\u011bry",
+        "controls": [
+          "control.vyska",
+          "control.sirka",
+          "control.material_1"
+        ]
+      },
+      {
+        "id": "group.okno",
+        "label": "Okno",
+        "controls": [
+          "control.typ",
+          "control.material"
+        ]
+      },
+      {
+        "id": "group.otev\u0159en\u00ed",
+        "label": "Otev\u0159en\u00ed",
+        "controls": [
+          "control.otevrit"
+        ]
+      }
+    ]
+  },
   "controls": [
     {
       "id": "control.vyska",
@@ -21,14 +48,22 @@
           {
             "type": "MORPH",
             "name": "Action 1",
-            "target": "Window",
+            "targets": [
+              "Window",
+              "Frame"
+            ],
             "shape_key_max": "Max_Height_Action1",
             "shape_key_min": "Min_Height_Action1"
           },
           {
             "type": "TRANSFORM",
             "name": "Action 2",
-            "target": null,
+            "targets": [
+              "Handle_3",
+              "Handle_2",
+              "Handle_1",
+              "Handle_4"
+            ],
             "channel": "LOC",
             "axis": "Z",
             "min_pos": [
@@ -62,14 +97,22 @@
           {
             "type": "MORPH",
             "name": "Action 1",
-            "target": "Window",
+            "targets": [
+              "Window",
+              "Frame"
+            ],
             "shape_key_max": "Max_Width_Action1",
             "shape_key_min": "Min_Width_Action1"
           },
           {
             "type": "TRANSFORM",
             "name": "Action 2",
-            "target": null,
+            "targets": [
+              "Handle_3",
+              "Handle_2",
+              "Handle_1",
+              "Handle_4"
+            ],
             "channel": "LOC",
             "axis": "X",
             "min_pos": [
@@ -102,7 +145,10 @@
       },
       "driver": {
         "type": "MATERIAL",
-        "target": null,
+        "targets": [
+          "Frame",
+          "Window"
+        ],
         "slot": 1,
         "options": [
           "LV_Aluminium_Brushed",
@@ -147,7 +193,12 @@
       },
       "driver": {
         "type": "MATERIAL",
-        "target": null,
+        "targets": [
+          "Handle_1",
+          "Handle_2",
+          "Handle_3",
+          "Handle_4"
+        ],
         "slot": 0,
         "options": [
           "LV_Aluminium_Matte",
@@ -178,32 +229,5 @@
       }
     }
   ],
-  "ui": {
-    "groups": [
-      {
-        "id": "group.rozm\u011bry",
-        "label": "Rozm\u011bry",
-        "controls": [
-          "control.vyska",
-          "control.sirka",
-          "control.material_1"
-        ]
-      },
-      {
-        "id": "group.okno",
-        "label": "Okno",
-        "controls": [
-          "control.typ",
-          "control.material"
-        ]
-      },
-      {
-        "id": "group.otev\u0159en\u00ed",
-        "label": "Otev\u0159en\u00ed",
-        "controls": [
-          "control.otevrit"
-        ]
-      }
-    ]
-  }
+  "parts": []
 }
