@@ -1,56 +1,34 @@
 {
-  "schema": 1,
+  "schema": 2,
   "units": "mm",
   "assembly_node": "ASM_WINDOW_ROOT",
   "parts": [],
   "controls": [
     {
       "id": "control.vyska",
-      "name": "V\u00fd\u0161ka",
-      "part": "",
+      "label": "V\u00fd\u0161ka",
+      "part_id": "",
+      "ui_type": "SLIDER",
       "ui": {
-        "type": "SLIDER",
-        "type_raw": "SLIDER",
         "unit": "mm",
         "min": 0.0,
         "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS"
+        "default": 0.0
       },
       "driver": {
         "type": "LINKED",
         "actions": [
           {
-            "action_type": "MORPH",
+            "type": "MORPH",
             "name": "Action 1",
-            "mesh": "Window",
-            "key": "Max_Height_Action1",
-            "key_min": "Min_Height_Action1",
-            "uv_scale": {
-              "min": [
-                1.0,
-                1.0
-              ],
-              "max": [
-                1.0,
-                1.0
-              ]
-            },
-            "uv_offset": {
-              "min": [
-                0.0,
-                0.0
-              ],
-              "max": [
-                0.0,
-                0.0
-              ]
-            }
+            "target": "Window",
+            "shape_key_max": "Max_Height_Action1",
+            "shape_key_min": "Min_Height_Action1"
           },
           {
-            "action_type": "TRANSFORM",
+            "type": "TRANSFORM",
             "name": "Action 2",
-            "node": null,
+            "target": null,
             "channel": "LOC",
             "axis": "Z",
             "min_pos": [
@@ -69,51 +47,29 @@
     },
     {
       "id": "control.sirka",
-      "name": "\u0160\u00ed\u0159ka",
-      "part": "",
+      "label": "\u0160\u00ed\u0159ka",
+      "part_id": "",
+      "ui_type": "SLIDER",
       "ui": {
-        "type": "SLIDER",
-        "type_raw": "SLIDER",
         "unit": "mm",
         "min": 0.0,
         "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS"
+        "default": 0.0
       },
       "driver": {
         "type": "LINKED",
         "actions": [
           {
-            "action_type": "MORPH",
+            "type": "MORPH",
             "name": "Action 1",
-            "mesh": "Window",
-            "key": "Max_Width_Action1",
-            "key_min": "Min_Width_Action1",
-            "uv_scale": {
-              "min": [
-                1.0,
-                1.0
-              ],
-              "max": [
-                1.0,
-                1.0
-              ]
-            },
-            "uv_offset": {
-              "min": [
-                0.0,
-                0.0
-              ],
-              "max": [
-                0.0,
-                0.0
-              ]
-            }
+            "target": "Window",
+            "shape_key_max": "Max_Width_Action1",
+            "shape_key_min": "Min_Width_Action1"
           },
           {
-            "action_type": "TRANSFORM",
+            "type": "TRANSFORM",
             "name": "Action 2",
-            "node": null,
+            "target": null,
             "channel": "LOC",
             "axis": "X",
             "min_pos": [
@@ -132,92 +88,85 @@
     },
     {
       "id": "control.material_1",
-      "name": "Materi\u00e1l",
-      "part": "",
+      "label": "Materi\u00e1l",
+      "part_id": "",
+      "ui_type": "DROPDOWN",
       "ui": {
-        "type": "DROPDOWN",
-        "type_raw": "DROPDOWN",
-        "unit": "mm",
-        "min": 0.0,
-        "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS",
+        "options": [
+          "LV_Aluminium_Brushed",
+          "LV_Bronze_Matte",
+          "LV_CoolSunrise_Matte",
+          "LV_RoseGold_Matte"
+        ],
+        "default_option": "LV_Aluminium_Brushed"
+      },
+      "driver": {
+        "type": "MATERIAL",
+        "target": null,
+        "slot": 1,
         "options": [
           "LV_Aluminium_Brushed",
           "LV_Bronze_Matte",
           "LV_CoolSunrise_Matte",
           "LV_RoseGold_Matte"
         ]
-      },
-      "driver": {
-        "type": "MATERIAL",
-        "mesh": null,
-        "slot": 1,
-        "materials": []
       }
     },
     {
       "id": "control.typ",
-      "name": "Typ",
-      "part": "",
+      "label": "Typ",
+      "part_id": "",
+      "ui_type": "DROPDOWN",
       "ui": {
-        "type": "DROPDOWN",
-        "type_raw": "DROPDOWN",
-        "unit": "mm",
-        "min": 0.0,
-        "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS",
         "options": [
           "Handle_1",
           "Handle_2",
           "Handle_3",
           "Handle_4"
-        ]
+        ],
+        "default_option": "Handle_1"
       },
       "driver": {
         "type": "SWAP",
-        "nodes": []
+        "targets": []
       }
     },
     {
       "id": "control.material",
-      "name": "Materi\u00e1l",
-      "part": "",
+      "label": "Materi\u00e1l",
+      "part_id": "",
+      "ui_type": "DROPDOWN",
       "ui": {
-        "type": "DROPDOWN",
-        "type_raw": "DROPDOWN",
-        "unit": "mm",
-        "min": 0.0,
-        "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS",
+        "options": [
+          "LV_Aluminium_Matte",
+          "LV_Bronze_Matte",
+          "LV_CoolSunrise_Matte",
+          "LV_Graphite_Matte"
+        ],
+        "default_option": "LV_Aluminium_Matte"
+      },
+      "driver": {
+        "type": "MATERIAL",
+        "target": null,
+        "slot": 0,
         "options": [
           "LV_Aluminium_Matte",
           "LV_Bronze_Matte",
           "LV_CoolSunrise_Matte",
           "LV_Graphite_Matte"
         ]
-      },
-      "driver": {
-        "type": "MATERIAL",
-        "mesh": null,
-        "slot": 0,
-        "materials": []
       }
     },
     {
       "id": "control.otevrit",
-      "name": "Otev\u0159\u00edt",
-      "part": "",
+      "label": "Otev\u0159\u00edt",
+      "part_id": "",
+      "ui_type": "SLIDER",
       "ui": {
-        "type": "SLIDER",
-        "type_raw": "SLIDER",
         "unit": "%",
         "min": 0.0,
         "max": 100.0,
-        "default": 0.0,
-        "step_mode": "CONTINUOUS"
+        "default": 0.0
       },
       "driver": {
         "type": "DOOR",
@@ -232,7 +181,8 @@
   "ui": {
     "groups": [
       {
-        "name": "Rozm\u011bry",
+        "id": "group.rozm\u011bry",
+        "label": "Rozm\u011bry",
         "controls": [
           "control.vyska",
           "control.sirka",
@@ -240,14 +190,16 @@
         ]
       },
       {
-        "name": "Okno",
+        "id": "group.okno",
+        "label": "Okno",
         "controls": [
           "control.typ",
           "control.material"
         ]
       },
       {
-        "name": "Otev\u0159en\u00ed",
+        "id": "group.otev\u0159en\u00ed",
+        "label": "Otev\u0159en\u00ed",
         "controls": [
           "control.otevrit"
         ]
